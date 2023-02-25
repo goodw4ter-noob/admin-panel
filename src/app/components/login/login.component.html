@@ -6,7 +6,7 @@
           <div class="mb-md-5 mt-md-4 pb-5">
             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
             <p class="text-white-50 mb-5">
-              Please enter your login and password!
+              Please enter your login and password
             </p>
 
             <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
@@ -25,6 +25,15 @@
                   <small *ngIf="this.loginForm.get('password')?.invalid && this.loginForm.get('password')?.touched" class="text-danger">Password is required (min. length = 8)</small>
                 </p>
               </div>
+
+              <div class="form-outline form-white mb-4">
+                <input formControlName="description" type="text" id="typeDescriptionX" class="form-control form-control-lg" />
+                <label class="form-label" for="typeDescriptionX">Description</label>
+                <p>
+                  <small *ngIf="this.loginForm.get('description')?.invalid && this.loginForm.get('description')?.touched" class="text-danger">{{this.loginForm.get('description')?.errors?.['key']}}</small>
+                </p>
+              </div>
+
               <button [disabled]="loginForm.invalid" class="btn btn-outline-light btn-lg px-5" type="submit">
                 Login
               </button>

@@ -22,6 +22,7 @@ export class AuthGuard implements CanActivate, CanDeactivate<unknown> {
       return true;
     }
   }
+
   canDeactivate(
     component: unknown,
     currentRoute: ActivatedRouteSnapshot,
